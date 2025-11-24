@@ -32,7 +32,7 @@ export default function CheckoutCancelPage() {
           <h1 className={styles.title}>Payment Cancelled</h1>
           <p className={styles.message}>
             Your payment was cancelled. No charges have been made to your account.
-            You can try again anytime or explore our other consulting packages.
+            You can try again anytime or explore our other consulting courses.
           </p>
           
           <div className={styles.actions}>
@@ -40,7 +40,7 @@ export default function CheckoutCancelPage() {
               onClick={() => router.push('/')}
               className={styles.primaryButton}
             >
-              Back to Packages
+              Back to Courses
             </button>
             <button
               onClick={() => router.push('/dashboard')}

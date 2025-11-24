@@ -136,12 +136,12 @@ export default function DashboardPage() {
               </svg>
             </div>
             <h2>No Orders Yet</h2>
-            <p>You haven&apos;t purchased any consulting packages yet.</p>
+            <p>You haven&apos;t purchased any consulting courses yet.</p>
             <button
               onClick={() => router.push('/')}
               className={styles.primaryButton}
             >
-              Browse Packages
+              Browse Courses
             </button>
           </div>
         ) : (

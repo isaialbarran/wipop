@@ -6,8 +6,14 @@ import { AuthProvider } from '@/components/Auth/AuthProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'InnovaGestion - Professional Consulting',
-  description: 'Transform your business with our expert consulting packages. Choose the perfect plan to accelerate your growth and achieve your goals.',
+  title: 'InnovaGestion - Cursos Profesionales',
+  description: 'Transforma tu negocio con nuestros cursos especializados. Elige el curso perfecto para acelerar tu crecimiento y alcanzar tus objetivos.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+  },
 }
 
 export default function RootLayout({

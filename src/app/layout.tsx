@@ -6,7 +6,7 @@ import { AuthProvider } from '@/components/Auth/AuthProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'NodeX Services - Professional Consulting',
+  title: 'InnovaGestion - Professional Consulting',
   description: 'Transform your business with our expert consulting packages. Choose the perfect plan to accelerate your growth and achieve your goals.',
 }
 

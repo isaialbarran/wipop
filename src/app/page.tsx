@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase-client'
 import { Package } from '@/types/database'
 import Header from '@/components/Header/Header'
+import Footer from '@/components/Footer/Footer'
 import PackageCard from '@/components/PackageCard/PackageCard'
 import { useAuth } from '@/components/Auth/AuthProvider'
 import { useRouter } from 'next/navigation'
@@ -57,28 +58,28 @@ export default function HomePage() {
       <section className={styles.hero}>
         <div className={styles.heroContainer}>
           <h1 className={styles.heroTitle}>
-            Professional Consulting Services
+            Innovación en Gestión Empresarial
           </h1>
           <p className={styles.heroSubtitle}>
-            Transform your business with our expert consulting packages. 
-            Choose the perfect plan to accelerate your growth and achieve your goals.
+            Transformamos tu negocio con nuestros cursos especializados.
+            Elige el curso perfecto para acelerar tu crecimiento y alcanzar tus objetivos.
           </p>
-          <a href="#packages" className={styles.heroButton}>
-            View Packages
+          <a href="#cursos" className={styles.heroButton}>
+            Ver Cursos
           </a>
         </div>
       </section>
 
-      <section id="packages" className={styles.packages}>
+      <section id="cursos" className={styles.packages}>
         <div className={styles.packagesContainer}>
-          <h2 className={styles.sectionTitle}>Our Consulting Packages</h2>
+          <h2 className={styles.sectionTitle}>Nuestros Cursos</h2>
           <p className={styles.sectionSubtitle}>
-            Select the package that best fits your business needs and budget
+            Selecciona el curso que mejor se adapte a tus necesidades y objetivos de aprendizaje
           </p>
-          
+
           {loading ? (
             <div style={{ textAlign: 'center', padding: '2rem' }}>
-              Loading packages...
+              Cargando cursos...
             </div>
           ) : (
             <div className={styles.packagesGrid}>
@@ -98,20 +99,20 @@ export default function HomePage() {
       <section id="about" className={styles.about}>
         <div className={styles.aboutContainer}>
           <div className={styles.aboutContent}>
-            <h2>Why Choose Our Consulting Services?</h2>
+            <h2>¿Por qué elegir nuestros cursos?</h2>
             <p>
-              With years of experience in business transformation, our team of experts 
-              provides tailored solutions that drive real results. We combine strategic 
-              thinking with practical implementation to help your business thrive.
+              Con años de experiencia en formación empresarial, nuestro equipo de expertos
+              ofrece cursos especializados que generan resultados reales. Combinamos
+              conocimiento teórico con aplicación práctica para ayudarte a alcanzar tus metas profesionales.
             </p>
             <p>
-              Our proven methodologies and industry expertise ensure that every 
-              consulting engagement delivers measurable value and sustainable growth 
-              for your organization.
+              Nuestros programas de formación probados y experiencia en la industria aseguran que cada
+              curso entregue valor medible y desarrollo profesional continuo
+              para ti y tu organización.
             </p>
           </div>
           <div className={styles.aboutImage}>
-            Professional Consulting
+            Formación Profesional
           </div>
         </div>
       </section>
@@ -119,17 +120,19 @@ export default function HomePage() {
       <section id="contact" className={styles.contact}>
         <div className={styles.contactContainer}>
           <div className={styles.contactContent}>
-            <h2>Ready to Get Started?</h2>
+            <h2>¿Listo para comenzar?</h2>
             <p>
-              Have questions about our consulting packages? Need a custom solution? 
-              Our team is here to help you find the perfect consulting approach for your business.
+              ¿Tienes preguntas sobre nuestros cursos? ¿Necesitas información personalizada?
+              Nuestro equipo está aquí para ayudarte a encontrar el curso perfecto para tu desarrollo profesional.
             </p>
-            <a href="mailto:contact@nodexservices.com" className={styles.contactButton}>
-              Contact Us
+            <a href="mailto:contacto@innovagestion.com" className={styles.contactButton}>
+              Contáctanos
             </a>
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   )
 }

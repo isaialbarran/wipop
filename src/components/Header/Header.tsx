@@ -12,18 +12,12 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          NodeX Services
+          InnovaGestion
         </Link>
 
         <nav className={styles.nav}>
-          <Link href="/#packages" className={styles.navLink}>
-            Packages
-          </Link>
-          <Link href="/#about" className={styles.navLink}>
-            About
-          </Link>
-          <Link href="/#contact" className={styles.navLink}>
-            Contact
+          <Link href="/#cursos" className={styles.navLink}>
+            Cursos
           </Link>
         </nav>
 
@@ -33,10 +27,10 @@ export default function Header() {
           ) : (
             <>
               <Link href="/auth" className={styles.signInButton}>
-                Sign In
+                Iniciar Sesión
               </Link>
               <Link href="/auth" className={styles.signUpButton}>
-                Sign Up
+                Registrarse
               </Link>
             </>
           )}

@@ -23,7 +23,7 @@ export default function AuthPage() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Welcome to NodeX Services</h1>
+        <h1 className={styles.title}>Welcome to InnovaGestion</h1>
         <p className={styles.subtitle}>
           Sign in to your account or create a new one to get started
         </p>

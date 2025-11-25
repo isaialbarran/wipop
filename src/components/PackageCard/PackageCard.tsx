@@ -71,7 +71,7 @@ export default function PackageCard({ package: pkg, onPurchase, isPopular = fals
         disabled={loading}
         className={`${styles.button} ${isPopular ? styles.popularButton : ''}`}
       >
-        {loading ? 'Processing...' : 'Purchase Package'}
+        {loading ? 'Procesando...' : 'Comprar curso'}
       </button>
     </div>
   )

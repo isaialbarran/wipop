@@ -1,4 +1,4 @@
-# NodeX Services Landing Page
+# Innovagestion Services Landing Page
 
 A modern Next.js application for selling consulting packages with Supabase authentication and Stripe payments.
 
@@ -25,7 +25,7 @@ A modern Next.js application for selling consulting packages with Supabase authe
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 - Supabase account
 - Stripe account
@@ -33,26 +33,30 @@ A modern Next.js application for selling consulting packages with Supabase authe
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd nodex-services-landing
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Set up environment variables:
+
 ```bash
 cp env.example .env.local
 ```
 
 4. Configure your environment variables in `.env.local`:
+
 ```env
 # Supabase Configuration
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url_here
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+NEXT_PUBLIC_SUPABASE_URL_KEY=your_supabase_url_here
+NEXT_PUBLIC_SUPABASE_ANON_KEY_KEY=your_supabase_anon_key_here
 
 # Stripe Configuration
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key_here
@@ -80,6 +84,7 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 ### Running the Application
 
 1. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -112,23 +117,27 @@ src/
 ## Key Features
 
 ### Authentication
+
 - User registration and login
 - Protected routes
 - User profile management
 - Session handling
 
 ### Package Management
+
 - Display consulting packages
 - Package details and pricing
 - Feature lists and descriptions
 
 ### Payment Processing
+
 - Secure Stripe checkout
 - Webhook handling for payment confirmation
 - Order management
 - Payment status tracking
 
 ### User Dashboard
+
 - View purchased packages
 - Order history
 - Package access
@@ -143,11 +152,13 @@ src/
 ## Database Schema
 
 ### Tables
+
 - `packages` - Consulting package information
 - `orders` - User purchase records
 - `user_profiles` - Extended user information
 
 ### Security
+
 - Row Level Security (RLS) enabled
 - User-specific data access
 - Secure authentication flow
@@ -155,11 +166,13 @@ src/
 ## Deployment
 
 ### Vercel (Recommended)
+
 1. Connect your GitHub repository to Vercel
 2. Set environment variables in Vercel dashboard
 3. Deploy automatically on push
 
 ### Other Platforms
+
 - Ensure Node.js 18+ support
 - Set all environment variables
 - Configure webhook URLs for Stripe
@@ -178,4 +191,4 @@ This project is licensed under the MIT License.
 
 ## Support
 
-For support, email contact@nodexservices.com or create an issue in the repository.
+For support, email contact@innovagestion.com or create an issue in the repository.

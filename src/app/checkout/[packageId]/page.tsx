@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase-client";
-import { getStripeForClient } from "@/lib/stripe";
 import { Package } from "@/types/database";
 import { useAuth } from "@/components/Auth/AuthProvider";
 import Header from "@/components/Header/Header";
@@ -54,39 +53,42 @@ export default function CheckoutPage() {
   }, [user, authLoading, router, packageId, supabase]);
 
   const handleCheckout = async () => {
-    if (!packageData) return;
+    if (!packageData || !user) return;
 
     setProcessing(true);
     setError("");
 
     try {
-      const response = await fetch("/api/create-checkout-session", {
+      const response = await fetch("/api/wipop/checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ packageId: packageData.id }),
+        body: JSON.stringify({
+          amount: packageData.price,
+          description: packageData.name,
+          redirect_url: `${window.location.origin}/checkout/success`,
+          customer: {
+            name: user.user_metadata?.full_name || "Cliente",
+            last_name: "",
+            email: user.email,
+            external_id: user.id,
+          },
+        }),
       });
 
-      const { sessionId, error } = await response.json();
+      const data = await response.json();
 
-      if (error) {
-        setError(error);
+      if (data.error) {
+        setError(data.error);
         return;
       }
 
-      const stripe = await getStripeForClient();
-      if (!stripe) {
-        setError("Stripe failed to load");
-        return;
-      }
-
-      const { error: stripeError } = await stripe.redirectToCheckout({
-        sessionId,
-      });
-
-      if (stripeError) {
-        setError(stripeError.message || "Checkout failed");
+      // Redirigir al checkout de Wipöp
+      if (data.checkout_link) {
+        window.location.href = data.checkout_link;
+      } else {
+        setError("No se pudo obtener el link de pago");
       }
     } catch {
       setError("An unexpected error occurred");
@@ -162,7 +164,7 @@ export default function CheckoutPage() {
             {error && <div className={styles.errorMessage}>{error}</div>}
 
             <p className={styles.security}>
-              🔒 Secure payment powered by Stripe
+              Secure payment powered by Wipop
             </p>
           </div>
         </div>

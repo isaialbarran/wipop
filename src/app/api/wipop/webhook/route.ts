@@ -1,12 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@/lib/supabase-server";
 
 export async function POST(request: NextRequest) {
   const body = await request.text();
 
   try {
-    console.log(body);
-    return NextResponse.json({ message: "Webhook handler" });
+    console.log("Wipop webhook received:", body);
+    return NextResponse.json({ message: "Webhook received" });
   } catch (error) {
     console.error(error);
     return NextResponse.json(
@@ -16,9 +15,9 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
-    return NextResponse.json({ message: "Webhook handler" });
+    return NextResponse.json({ message: "Wipop webhook active" });
   } catch (error) {
     console.error(error);
     return NextResponse.json(

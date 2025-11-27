@@ -17,10 +17,8 @@ export async function POST(request: NextRequest) {
     const checkoutData = {
       amount: body.amount || 1.0,
       description: body.description || "Checkout de prueba",
-      send_email: body.send_email || false,
       currency: "EUR",
-      origin: "API",
-      product_type: "PAYMENT_LINK",
+      product_type: "PAYMENT_GATEWAY",
       terminal: {
         id: body.terminal_id || 1,
       },
@@ -30,7 +28,7 @@ export async function POST(request: NextRequest) {
         name: body.customer?.name || "Test",
         last_name: body.customer?.last_name || "User",
         email: body.customer?.email || "test@example.com",
-        external_id: body.customer?.external_id || 27112025,
+        external_id: body.customer?.external_id || "27112025",
       },
     };
 
